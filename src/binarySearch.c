@@ -10,11 +10,11 @@ int binarySearch(int target, int array[], int startIndex, int endIndex)
 	
 	if(target == array[halfIndex]) {
 		return halfIndex;
+	} else if(startIndex == endIndex) {
+		return -1;
 	} else if(target < array[halfIndex]) {
-		binarySearch(target, array, startIndex, halfIndex);
-	} else if(target == array[halfIndex + 1]) {
-		return halfIndex+1;
-	} else {	
-		binarySearch(target, array, halfIndex, endIndex);
+		binarySearch(target, array, startIndex, halfIndex - 1);
+	}  else {	
+		binarySearch(target, array, halfIndex + 1, endIndex);
 	}
 }

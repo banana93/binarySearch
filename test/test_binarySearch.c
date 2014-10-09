@@ -94,3 +94,17 @@ void test_binarySearch_given_13_element_array_should_be_able_to_find_number_26(v
 	TEST_ASSERT_EQUAL(12, result);
 	TEST_ASSERT_EQUAL(26, array[result]);
 }
+
+/**
+ *   ---------------
+ *  | 2 | 3 | 4 | 5 |
+ *   ---------------
+ */
+void test_binarySearch_given_4_element_array_should_return_negative_1_if_the_number_is_not_found(void)
+{
+	int array[] = {2, 3, 4 , 5};
+	int result;
+	
+	result = binarySearch(6, array, 0, 3);
+	TEST_ASSERT_EQUAL(-1, result);
+}
